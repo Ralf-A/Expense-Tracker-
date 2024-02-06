@@ -34,7 +34,12 @@ export default {
   display: flex;
   min-height: 100vh;
   min-width: 100vh;
-  background: #3F4B5B;
+    text-align: center;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
 
 }
 
@@ -46,7 +51,6 @@ export default {
     display: flex;
     min-height: 100vh;
     min-width: 100vh;
-    background: #3F4B5B;
 
   }
 }

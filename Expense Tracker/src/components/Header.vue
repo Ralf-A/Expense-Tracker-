@@ -1,9 +1,9 @@
 <template>
     <header>
-        <div class="button-container">            
+        <div class="button-container">
             <!-- This Months Expenses TODO add amount -->
-            <p class="months-expenses">This Months Expenses:</p>
-            
+            <a class="months-expenses">This Months Expenses: €</a> 
+
             <!-- Home expenses button -->
             <button class="expenses-button">
                 <img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\home.svg" alt="home"
@@ -40,7 +40,7 @@
             </button>
 
             <!-- Greetings TODO: name -->
-            <p class="greetings">Hi, </p>
+            <a class="greetings">Hi, </a>
 
             <!-- Settings button -->
             <button class="settings-button">
@@ -52,10 +52,17 @@
 </template>
   
 <style>
+
 .button-container {
     display: flex;
     padding-bottom: 1.759%;
+    align-items: center;
+}
 
+a{
+    text-align: center;
+    font-size: 26px;
+    display: flex;
 }
 
 .months-expenses {
@@ -68,7 +75,8 @@
     border: none;
     border-radius: 10px;
     background: #1F262F;
-    transition: background-color 0.3s ease;
+    align-items: center;
+
 }
 
 .expenses-button {
@@ -81,14 +89,21 @@
     border-radius: 10px;
     background: #1F262F;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    
 }
 
 img {
-    width: 47px;
-    height: 47px;
+    width: 46px;
+    height: 45px;
     flex-shrink: 0;
     background: #1F262F;
+    vertical-align: middle; 
 
 }
 
@@ -101,7 +116,6 @@ img {
     border: none;
     border-radius: 10px;
     background: #1F262F;
-    transition: background-color 0.3s ease;
 }
 
 .settings-button {
