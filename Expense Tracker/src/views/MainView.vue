@@ -3,34 +3,39 @@
     <div class="container">
       <div class="left-section">
         <a class="logo">
-          <img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\logo.svg" alt="logo" class="logo-icon">
+          <img src="@/assets/logo.svg" alt="logo" class="logo-icon">
           <span class="logo-text">Diamond expense tracker</span>
         </a>
-        <button class="left-button"><img
-            src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\home-black.svg" alt="home-black"
-            class="sidebutton-icon"></button>
-        <button class="left-button"><img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\stats.svg"
-            alt="stats" class="sidebutton-icon"></button>
-        <button class="left-button"><img
-            src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\favorites.svg" alt="favorites"
-            class="sidebutton-icon"></button>
-        <button class="left-button"><img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\settings.svg"
-            alt="settings" class="sidebutton-icon"></button>
+        <button class="left-button-active"><img src="@/assets/home-black.svg" alt="home-black"
+            class="sidebutton-icon-active"></button>
+        <button class="left-button"><img src="@/assets/stats.svg" alt="stats" class="sidebutton-icon"></button>
+        <button class="left-button"><img src="@/assets/favorites.svg" alt="favorites" class="sidebutton-icon"></button>
+        <button class="left-button"><img src="@/assets/settings.svg" alt="settings" class="sidebutton-icon"></button>
         <button class="light-darkmode-button" @click="toggleDarkMode">
           <div class="dark-slider"
             :style="{ width: isDarkMode ? '50px' : '0', backgroundColor: isDarkMode ? '#FFF' : '#D9D9D9' }"></div>
           <div class="light-slider"
             :style="{ width: isDarkMode ? '0' : '50px', backgroundColor: isDarkMode ? '#D9D9D9' : '#FFF' }"></div>
-          <img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\dark.svg" alt="Dark Mode Icon"
-            class="dark-icon"
-            :style="{ zIndex: isDarkMode ? '2' : '1', backgroundColor: isDarkMode ? '#FFF' : '#D9D9D9' }">
-          <img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\light.svg" alt="Light Mode Icon"
-            class="light-icon"
-            :style="{ zIndex: isDarkMode ? '1' : '2', backgroundColor: isDarkMode ? '#D9D9D9' : '#FFF' }">
+          <img src="@/assets/dark.svg" alt="Dark Mode Icon" class="dark-icon">
+          <img src="@/assets/light.svg" alt="Light Mode Icon" class="light-icon">
         </button>
-
       </div>
       <div class="divider"></div>
+      <div class="right-section">
+        <div class="search-bar">
+          <input type="text" class="search-input" placeholder="Search Expense">
+          <button class="search-button">
+            <img src="@/assets/searchblack.svg" alt="Search" class="search-icon">
+          </button>
+        </div>
+        <div class="add-expense">
+          <input type="text" class="add-expense-input" placeholder="Add Expense">
+          <button class="add-expense-button">
+            <img src="@/assets/add.svg" alt="Add" class="add-expense-icon">
+          </button>
+        </div>
+
+      </div>
     </div>
   </main>
 </template>
@@ -83,7 +88,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: #1F262F;
+  background: transparent;
 }
 
 .logo-icon {
@@ -99,7 +104,7 @@ main {
   font-style: normal;
   font-weight: 530;
   line-height: normal;
-  background-color: #1F262F;
+  background: transparent;
 }
 
 .logo {
@@ -110,7 +115,7 @@ main {
   align-items: center;
   justify-content: flex-start;
   /* Adjusted alignment */
-  background-color: #1F262F;
+  background: transparent;
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -128,14 +133,30 @@ main {
   border: none;
   flex-shrink: 0;
   border-radius: 20px;
-
   margin-bottom: 20%;
   cursor: pointer;
 
 }
 
+.left-button-active {
+  width: 90px;
+  height: 90px;
+  background: #FFF;
+  border: none;
+  flex-shrink: 0;
+  border-radius: 20px;
+
+  margin-bottom: 20%;
+  cursor: pointer;
+}
+
 .sidebutton-icon {
-  background: #D9D9D9;
+  background: transparent;
+}
+
+.sidebutton-icon-active {
+  background: transparent;
+
 }
 
 .light-darkmode-button {
@@ -159,11 +180,13 @@ main {
 
 .dark-icon {
   left: 10px;
+  background: transparent;
 
 }
 
 .light-icon {
   right: 10px;
+  background: transparent;
 
 }
 
@@ -196,4 +219,87 @@ main {
   width: 1px;
   height: 100%;
   background-color: white;
-}</style>
+}
+
+.right-section {
+  padding: 1%;
+  border-radius: 20px;
+  background: transparent;
+}
+
+.search-bar {
+  width: 400px;
+  height: 90px;
+  border-radius: 25px;
+  background: #D9D9D9;
+  margin-left: 17.4479166667%;
+  margin-top: 5.8518518519%;
+  float: left; /* Add this line */
+}
+
+.search-input {
+  width: calc(100% - 150px);
+  /* Adjust as needed */
+  font-size: xx-large;
+  height: 100%;
+  border: none;
+  border-radius: 25px;
+  background: transparent;
+  outline: none;
+}
+
+.search-button {
+  width: auto;
+  /* Adjust as needed */
+  border: none;
+  background: transparent;
+  padding-left: 9%;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 100%;
+  background: transparent;
+  padding-bottom: 20%;
+  padding-left: 9%;
+  height: 100%;
+}
+
+.add-expense {
+  width: 400px;
+  height: 90px;
+  border-radius: 25px;
+  background: #D9D9D9;
+  margin-left: 2.08333333333%; /* Adjusted margin-left */
+  margin-top: 5.8518518519%;
+  float: left; /* Add this line */
+}
+
+.add-expense-input {
+  width: calc(100% - 150px);
+  font-size: xx-large;
+  height: 100%;
+  border: none;
+  border-radius: 25px;
+  background: transparent;
+  outline: none;
+}
+
+.add-expense-button {
+  width: auto;
+  /* Adjust as needed */
+  border: none;
+  background: transparent;
+  padding-bottom: 20%;
+  padding-left: 9%;
+  cursor: pointer;
+}
+
+.add-expense-icon {
+  width: 100%;
+  background: transparent;
+  padding-bottom: 20%;
+  padding-left: 9%;
+  height: 100%;
+}
+</style>

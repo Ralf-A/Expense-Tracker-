@@ -6,35 +6,35 @@
 
             <!-- Home expenses button -->
             <button class="expenses-button">
-                <img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\home.svg" alt="home"
+                <img src="@/assets/home.svg" alt="home"
                     class="button-icon">
                 home
             </button>
 
             <!-- Car expenses button -->
             <button class="expenses-button">
-                <img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\car.svg" alt="car"
+                <img src="@/assets/car.svg" alt="car"
                     class="button-icon">
                 car
             </button>
 
             <!-- Groceries expenses button -->
             <button class="expenses-button">
-                <img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\groceries.svg" alt="groceries"
+                <img src="@/assets/groceries.svg" alt="groceries"
                     class="button-icon">
                 groceries
             </button>
 
             <!-- Shopping expenses button -->
             <button class="expenses-button">
-                <img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\shopping.svg" alt="shopping"
+                <img src="@/assets/shopping.svg" alt="shopping"
                     class="button-icon">
                 shopping
             </button>
 
             <!-- Other expenses button -->
             <button class="expenses-button">
-                <img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\other.svg" alt="other"
+                <img src="@/assets/other.svg" alt="other"
                     class="button-icon">
                 other
             </button>
@@ -44,7 +44,7 @@
 
             <!-- Settings button -->
             <button class="settings-button">
-                <img src="E:\Github\Expense-Tracker-Frontend-\Expense Tracker\src\assets\burger.svg" alt="burger"
+                <img src="@/assets/burger.svg" alt="burger"
                     class="button-icon">
             </button>
         </div>
