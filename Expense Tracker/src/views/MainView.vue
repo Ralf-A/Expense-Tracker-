@@ -7,10 +7,10 @@
           <span class="logo-text">Diamond expense tracker</span>
         </a>
         <button class="left-button-active"><img src="@/assets/home-black.svg" alt="home-black"
-            class="sidebutton-icon-active"></button>
-        <button class="left-button"><img src="@/assets/stats.svg" alt="stats" class="sidebutton-icon"></button>
-        <button class="left-button"><img src="@/assets/favorites.svg" alt="favorites" class="sidebutton-icon"></button>
-        <button class="left-button"><img src="@/assets/settings.svg" alt="settings" class="sidebutton-icon"></button>
+            class="left-button-icon-active"></button>
+        <button class="left-button"><img src="@/assets/stats.svg" alt="stats" class="left-button-icon"></button>
+        <button class="left-button"><img src="@/assets/favorites.svg" alt="favorites" class="left-button-icon"></button>
+        <button class="left-button"><img src="@/assets/settings.svg" alt="settings" class="left-button-icon"></button>
         <button class="light-darkmode-button" @click="toggleDarkMode">
           <div class="dark-slider"
             :style="{ width: isDarkMode ? '50px' : '0', backgroundColor: isDarkMode ? '#FFF' : '#D9D9D9' }"></div>
@@ -34,6 +34,58 @@
             <img src="@/assets/add.svg" alt="Add" class="add-expense-icon">
           </button>
         </div>
+        <div class="recent-expenses">
+          <div class="recent-expenses-header">Recent Expenses</div>
+          <div class="recent-expenses-content">
+            <ul>
+              <li>
+                <span class="description">McDonald's</span>
+                <span class="price">5.22</span>
+                <span class="currency">€</span>
+              </li>
+              <li>
+                <span class="description">Description 2</span>
+                <span class="price">Price 2</span>
+                <span class="currency">€</span>
+              </li>
+              <li>
+                <span class="description">Description 3</span>
+                <span class="price">Price 3</span>
+                <span class="currency">€</span>
+
+              </li>
+              <li>
+                <span class="description">Description 4</span>
+                <span class="price">Price 4</span>
+                <span class="currency">€</span>
+
+              </li>
+              <li>
+                <span class="description">Description 5</span>
+                <span class="price">Price 5</span>
+                <span class="currency">€</span>
+
+              </li>
+              <li>
+                <span class="description">Description 6</span>
+                <span class="price">Price 6 </span>
+                <span class="currency">€</span>
+
+              </li>
+              <li>
+                <span class="description">Description 7</span>
+                <span class="price">Price 7 </span>
+                <span class="currency">€</span>
+
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="sort-by-date">
+          <!-- Content of sort by date section goes here -->
+        </div>
 
       </div>
     </div>
@@ -41,9 +93,11 @@
 </template>
 
 <script setup lang="ts">
+
 import { ref } from 'vue';
 
 const isDarkMode = ref(false);
+
 
 function toggleDarkMode() {
   isDarkMode.value = !isDarkMode.value;
@@ -99,8 +153,8 @@ main {
 
 .logo-text {
   color: #9B51E0;
-  font-family: Inter;
-  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
   font-style: normal;
   font-weight: 530;
   line-height: normal;
@@ -114,15 +168,8 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  /* Adjusted alignment */
   background: transparent;
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   margin-top: 6%;
-  /* Adjusted margin from the top of the container */
   margin-bottom: 20%
 }
 
@@ -150,14 +197,15 @@ main {
   cursor: pointer;
 }
 
-.sidebutton-icon {
+.left-button-icon {
   background: transparent;
 }
 
-.sidebutton-icon-active {
+.left-button-icon-active {
   background: transparent;
 
 }
+
 
 .light-darkmode-button {
   position: relative;
@@ -197,7 +245,14 @@ main {
   width: 50px;
   height: 54px;
   border-radius: 20px;
-  transition: transform 0.3s ease;
+}
+
+.light-darkmode-button:hover,
+.add-expense:hover,
+.search-bar:hover,
+.left-button:hover {
+  transition: background-color 0.4s ease;
+  background-color: rgb(242, 242, 240);
 }
 
 .light-slider {
@@ -207,13 +262,10 @@ main {
   width: 50px;
   height: 54px;
   border-radius: 20px;
-  transition: transform 0.3s ease;
 
 }
 
-.dark-mode .slider {
-  transform: translateX(100%);
-}
+
 
 .divider {
   width: 1px;
@@ -234,12 +286,11 @@ main {
   background: #D9D9D9;
   margin-left: 17.4479166667%;
   margin-top: 5.8518518519%;
-  float: left; /* Add this line */
+  float: left;
 }
 
 .search-input {
   width: calc(100% - 150px);
-  /* Adjust as needed */
   font-size: xx-large;
   height: 100%;
   border: none;
@@ -250,7 +301,6 @@ main {
 
 .search-button {
   width: auto;
-  /* Adjust as needed */
   border: none;
   background: transparent;
   padding-left: 9%;
@@ -270,9 +320,9 @@ main {
   height: 90px;
   border-radius: 25px;
   background: #D9D9D9;
-  margin-left: 2.08333333333%; /* Adjusted margin-left */
+  margin-left: 2.08333333333%;
   margin-top: 5.8518518519%;
-  float: left; /* Add this line */
+  float: left;
 }
 
 .add-expense-input {
@@ -287,7 +337,7 @@ main {
 
 .add-expense-button {
   width: auto;
-  /* Adjust as needed */
+  height: auto;
   border: none;
   background: transparent;
   padding-bottom: 20%;
@@ -301,5 +351,118 @@ main {
   padding-bottom: 20%;
   padding-left: 9%;
   height: 100%;
+}
+
+
+.recent-expenses {
+  width: 37.4375%;
+  height: 61.5740740741%;
+  margin-left: 17.4479166667%;
+  margin-top: 2%;
+  background: #D9D9D9;
+  border-radius: 25px;
+  float: left;
+  position: relative;
+  /* Needed for absolute positioning of child elements */
+}
+
+.recent-expenses-header {
+  margin-top: 3.518518519%;
+  text-align: center;
+  background: transparent;
+  color: #443F3F;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 600;
+  text-align: left;
+  margin-left: 5%;
+}
+
+
+.recent-expenses-content {
+  width: 94.139194139%;
+  height: 77.019748653%;
+  margin-top: 6%;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+
+
+.recent-expenses-content ul {
+  list-style: none;
+  padding: 0;
+  background: transparent;
+  color: #000;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.recent-expenses-content li {
+  display: flex;
+  /* Use flexbox for layout */
+  background: transparent;
+  padding: 9px;
+  /* Add padding between list items */
+  border-bottom: 1px solid #000000;
+  /* Add bottom border between list items */
+}
+
+.recent-expenses-content li:last-child {
+  border-bottom: none;
+  /* Remove bottom border from the last list item */
+}
+
+.description {
+  flex-grow: 1;
+  margin-left: 5%;
+  text-align: left;
+  background: transparent;
+  /* Expand to fill available space */
+}
+
+.price {
+  margin-left: auto;
+  /* Push the price to the right */
+  text-align: right;
+  color: #C55151;
+  background: transparent;
+  /* Add space between description and price */
+}
+
+.currency {
+  margin-left: -16%;
+  /* Adjust as needed */
+
+  background: transparent;
+  /* Add space between price and currency */
+}
+
+
+.sort-by-date {
+  width: 13.125%;
+  /* Same width as recent expenses */
+  height: 51.5740740741%;
+  /* Same height as recent expenses */
+  margin-left: 5%;
+  /* 10% margin from the left */
+  margin-top: 2%;
+  /* Same margin-top as recent expenses */
+  background: #D9D9D9;
+  border-radius: 25px;
+  float: left;
 }
 </style>

@@ -2,10 +2,12 @@
 import { RouterLink, RouterView } from 'vue-router'
 import Header from "@/components/Header.vue";
 
+
 export default {
   name: 'App',
   components: {
     Header,
+    
   },
   mounted() {
     this.logMountedComponent();
@@ -35,11 +37,10 @@ export default {
   min-height: 100vh;
   min-width: 100vh;
     text-align: center;
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 300;
     line-height: normal;
     text-align: center;
+    font-family: 'Inter', sans-serif;
+
 
 }
 
