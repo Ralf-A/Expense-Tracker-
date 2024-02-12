@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@types/vue": "^2.0.0"
+  },
+  "dependencies": {
+    "vuejs-datepicker": "^1.6.2"
   }
 }

@@ -84,7 +84,11 @@
         </div>
 
         <div class="sort-by-date">
-          <!-- Content of sort by date section goes here -->
+          <span class="sort-by-date-header">Sort by Date</span>
+          <button id="date-from-button" class="date-button">Select From Date</button>
+          <span class="date-text">To</span>
+          <button id="date-until-button" class="date-button">Select Until Date</button>
+          <button id="search-button" class="date-button">Search</button>
         </div>
 
       </div>
@@ -93,7 +97,6 @@
 </template>
 
 <script setup lang="ts">
-
 import { ref } from 'vue';
 
 const isDarkMode = ref(false);
@@ -103,6 +106,7 @@ function toggleDarkMode() {
   isDarkMode.value = !isDarkMode.value;
 }
 </script>
+
 
 <style>
 * {
@@ -388,7 +392,7 @@ main {
   flex-shrink: 0;
   border-radius: 25px;
   background: #FFF;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
   position: absolute;
   top: 50%;
   left: 50%;
